@@ -37,7 +37,11 @@ function procuracep(){
     
 }
 
-function mascara(src, mask){
+function maskCep(input){
+    createMask(input, "#####-###")
+}
+
+function createMask(src, mask){
     var i = src.value.length;
     var saida = mask.substring(0,1);
     var texto = mask.substring(i)

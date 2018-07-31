@@ -9,7 +9,7 @@
         <h1>Procura de Endereço</h1>
         <form onsubmit="procuracep(); return false;">
             <label>Digite seu Cep</label><br></br>
-            <input type="text" name="digiteCep" placeholder="CEP" id="cepDigitado" maxlength="9" onkeypress="mascara(this, '#####-###')" title="8 Numeros Requeridos" required>
+            <input type="text" name="digiteCep" placeholder="CEP" id="cepDigitado" maxlength="9" onkeypress="maskCep(this)" title="8 Numeros Requeridos" required>
             <span class="validity"></span>  <br></br>
             <input type="submit" value="Buscar Endereço" >
             
