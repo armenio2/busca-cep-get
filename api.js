@@ -2,6 +2,8 @@ window.onload = function () {
     addCepMask()
     formSubmit()
 };
+var testegithub ;
+//testando commit pelo vscod direto
 
 function addCepMask() {
     var element = document.getElementById("cepDigitado")
