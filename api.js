@@ -17,29 +17,37 @@ function formSubmit() {
     document.getElementById("form-cep")
         .addEventListener("submit", function (event) {
             if (isValidForm() == true) {
-                procuracep()
+                limpaTela()
+                procuracep()               
             }
             event.preventDefault()
         })
+}
+
+function limpaTela(){
+    document.getElementById("cep-result").innerHTML = ""; //limpando a tela se pesquisar novamente o cep.
 }
 
 function isValidForm() {
     var postalCode = document.getElementById("cepDigitado").value
 
     if (postalCode != null && postalCode.length == 9) {
-        hideError()
-        return true
+        hideError();
+        return true;
     } else {
-        showError()
-        return false
+        showError();
+        console.log("erro em isValidForm");
+        return false;
     }
 }
 
 function showError() {
+    console.log("Erro Visivel");
     document.getElementById("label-error").style.visibility = 'visible'
 }
 
 function hideError() {
+    console.log("Erro Não Visivel");
     document.getElementById("label-error").style.visibility = 'hidden'
 }
 
@@ -87,15 +95,20 @@ function procuracep() {
     var xmlhttp = new XMLHttpRequest();
     var url = "https://viacep.com.br/ws/" + cep + "/json/";
     xmlhttp.onreadystatechange = function () {
-        if (this.readyState == 4 && this.status == 200) {
+        if (this.readyState === 4 && this.status === 200) {
             var result = JSON.parse(this.responseText);
-            if (result.error) {
-                showError()
+            
+
+            if (result.erro== true) {
+                console.log("o cep é invalido");
+                showError();
             } else {
-                bindResult(result.localidade, result.bairro, result.logradouro)
+                console.log(result);
+                console.log("enviar resultado");
+                bindResult(result.localidade, result.bairro, result.logradouro);
+                
+                
             }
-        } else {
-            showError()
         }
     };
     xmlhttp.open("GET", url, true);
