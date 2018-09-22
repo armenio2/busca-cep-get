@@ -1,29 +1,24 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        
-        <script type="text/javascript" src="api.js"></script>
-        <link rel="stylesheet" type="text/css" href="validation.css" />
-        <script type="text/javascript" src="http://code.jquery.com/jquery-1.5.js"></script>
-    </head>
-    <body>
-        <!--Testando Git com VsCode-->
-        <h1>Procura de Endereço</h1>
-        <form id="form-cep">
-            <label>Digite seu Cep</label><br></br>
-            
-            <input type="text" name="digiteCep" 
-            placeholder="CEP" id="cepDigitado" 
-            maxlength="9" 
-            title="8 Numeros Requeridos">
-            <br/>
-            <span id="label-error">Cep inválido</span>
 
-            <span class="validity"></span>  <br></br>
-            <input type="submit" value="Buscar Endereço" >
-            
-        </form>
-        <div id="cep-result"/>  
-    </body>
-    
+<head>
+    <meta charset="UTF-8">
+    <script type="text/javascript" src="api.js"></script>
+    <link rel="stylesheet" type="text/css" href="validation.css" />
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.5.js"></script>
+</head>
+
+<body>
+    <h1>Procura de Endereço</h1>
+    <form id="form-cep">
+        <label>Digite seu Cep</label><br>
+        <input type="text" name="digiteCep" placeholder="CEP" id="cepDigitado" maxlength="9" title="8 Numeros Requeridos">
+        <br />
+        <span id="label-error">Cep inválido</span>
+        <span class="validity"></span> <br>
+        <input type="submit" value="Buscar Endereço">
+    </form>
+    <div id="cep-result"></div>
+</body>
+
 </html>
